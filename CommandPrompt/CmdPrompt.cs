@@ -61,6 +61,8 @@ namespace Cmd
                 case "black": color = ConsoleColor.Black; break;
                 case "red": color = ConsoleColor.Red; break;
                 case "blue": color = ConsoleColor.Blue; break;
+                case "green": color = ConsoleColor.Green; break;
+
                 case "darkYellow": color = ConsoleColor.DarkYellow; break;
 
                 default: color = ConsoleColor.DarkGray; break;
