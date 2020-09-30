@@ -39,7 +39,7 @@ namespace Cmd
                         monitor.SetScreenText(lineNum, text);
                         break;
                     case 4:
-                    //    monitor.ClearScreen();
+                     //  monitor.ClearScreen();
                         break;
                     case 5:
                         monitor.SaveScreen( GetInput( "File: " ) );
@@ -48,7 +48,7 @@ namespace Cmd
                         monitor.ReloadScreen( GetInput( "File: " ) );
                         break;
                     default:
-                    //    monitor.ClearScreen();
+                     //  monitor.ClearScreen();
                         break;
                 }
             } while (menuOption != 0);

@@ -22,28 +22,37 @@ namespace Cmd
             this.height =height;
             this.columns = columns;
             screenText = new string[height];
+            Console.SetWindowSize(columns, height + 7);
             for (int i = 0; i < screenText.Length; i++)
             {
                 screenText[i] = "";
             }
-            //backgroundColor = ConsoleColor.Red;   
-            //foregroundColor = ConsoleColor.Black; 
+            backgroundColor = ConsoleColor.Red;   
+           foregroundColor = ConsoleColor.Black; 
         }// end of CommandPrompt constructor
+        public void SetScreenText(int lineNumber, string lineOfText)
+        {
+            screenText[lineNumber] = lineOfText;
+        }   // end of SetScreenText method
         public void Display()
         {
             // set the foreground and background colors
             Console.Clear(); //  the Console object is available to us to control aspects of our terminal window. The Clear method will blank our window
-                                         // The Clear method has blanked the screen and left the cursor at the top of the window.
-                                         // We will now loop through the screenText array to put out text on the screen.
+                             //Console.BackgroundColor(backgroundColor);
+            Console.BackgroundColor = backgroundColor;
+            Console.ForegroundColor = foregroundColor;
+
+
+
+            // The Clear method has blanked the screen and left the cursor at the top of the window.
+            // We will now loop through the screenText array to put out text on the screen.
             for (int i = 0; i < screenText.Length; i++)
             {
                 Console.WriteLine(screenText[i]);
             }
         }   // end of Display method
-        public void SetScreenText(int lineNumber, string lineOfText)
-        {
-            screenText[lineNumber] = lineOfText;
-        }   // end of SetScreenText method
+
+  
         public void SetBackgroundColor(string color)
         {
             backgroundColor = ConvertColor(color);
